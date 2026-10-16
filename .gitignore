@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.env
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# macOS
+.DS_Store
+
+# Response / LLM cache (lives under ~/.claude/audit-trails/ at runtime,
+# but never track a cache database if one lands in the tree).
+*.db
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Retrieved corpus. cite-forge downloads publisher PDFs; those are
+# copyrighted third-party files and must never enter the repository.
+*.pdf
+papers/
+tests/papers/
+
+# Run artifacts produced by `cite-forge build` / the smoke fixture.
+# They are regenerated output, and they embed local absolute paths.
+tests/manifest.json
+tests/MISSING.md
+tests/ESCALATIONS.md
+tests/bibliography.md
+tests/bibliography.bib
+tests/bibliography.ris
+tests/bibliography.json
+failures.json
+audit-trails/
+
+# One-off manuscript-specific retrieval helpers. Not imported by the
+# package, not covered by tests, and two of them automate third-party
+# sites in ways that should not ship in a public release.
+scripts/

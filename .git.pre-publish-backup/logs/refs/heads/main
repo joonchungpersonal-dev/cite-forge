@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 8c8db8226c66a50a8a1d2100872bf1bbe718bf51 Joon Chung <joon.chung.personal@gmail.com> 1781644195 -0400	commit (initial): Snapshot: cite-forge as built 2026-06-01 (58 agents wired, 33 tests passing)
+8c8db8226c66a50a8a1d2100872bf1bbe718bf51 fd98050ffdf9c3e2dbce5cdac9742e0716422bb9 Joon Chung <joon.chung.personal@gmail.com> 1781653063 -0400	commit: Fix W7 convergence gate: real blind re-derivation + PDF decoupling
+fd98050ffdf9c3e2dbce5cdac9742e0716422bb9 2a0b0b82c9307f2f40a2d181e73804bc72a208f7 Joon Chung <joon.chung.personal@gmail.com> 1781784442 -0400	commit: Wire token/cost tracking through trail and run metadata
+2a0b0b82c9307f2f40a2d181e73804bc72a208f7 36d49fc9a670768d82b5c230f8d79383709c5679 Joon Chung <joon.chung.personal@gmail.com> 1781784761 -0400	commit: Fix fragile unit-citation linkage (bracket ref-number matching)

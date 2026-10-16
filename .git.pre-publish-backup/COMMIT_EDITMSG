@@ -1,0 +1,13 @@
+Fix fragile unit-citation linkage (bracket ref-number matching)
+
+cited_ref_nums was filled by exact string equality between an atomic unit's
+citation_anchor and A04's surface form, so anchor "[1]" failed to match
+surface "Meng et al. [1]" and the unit linked to no reference. Units with no
+linked ref then collapsed W6 claim-fidelity (function_confidence=0.00,
+context_not_captured), producing nondeterministic spurious UNCERTAINs.
+
+Link instead on the bracket ref-number(s) extracted from both anchor and
+surface (handles "[2, p. 12]", "[8,9,10]", ranges "[5-7]"/"[5–7]"), with a
+substring fallback for author-year anchors. New _bracket_ref_nums helper +
+test. Smoke now converges deterministically (2/3; the third correctly held
+for an unverifiable quote).

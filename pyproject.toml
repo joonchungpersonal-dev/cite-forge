@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cite-forge"
+version = "0.1.0"
+description = "Accuracy-first citation forge: extract, resolve, retrieve, and verify manuscript citations into a gold-standard PDF corpus + audit manifest."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Joon Chung", email = "joon.chung.personal@gmail.com"}]
+license = {text = "MIT"}
+
+dependencies = [
+    "httpx>=0.27",
+    "pydantic>=2.6",
+    "tenacity>=8.2",
+    "anthropic>=0.40",
+    "click>=8.1",
+    "rich>=13.7",
+    "pypdf>=4.0",
+    "python-docx>=1.1",
+    "aiolimiter>=1.1",
+    "lxml>=5.1",
+    "rapidfuzz>=3.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+    "black>=24.3",
+    "mypy>=1.10",
+]
+
+[project.scripts]
+cite-forge = "cite_forge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cite_forge*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
